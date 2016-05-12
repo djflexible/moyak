@@ -23,5 +23,5 @@ config 폴더 : 인증 기능 구현
 
 route 폴더 : 서비스 기능 구현
 
-serve.js 서버 동작
+serve.js : 서버 동작
 
