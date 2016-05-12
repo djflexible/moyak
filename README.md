@@ -16,6 +16,7 @@ EC2 - 가상서버 생성, Security Group - 방화벽 설정, Elastic IP : 고�
 Test Tool : Google Postman - 클라이언트 테스트
 
 Public API : 공공 데이터 포털 사이트의 서울시 약국 위치 데이터
+=============
 
 config 폴더 : 인증 기능 구현
 
