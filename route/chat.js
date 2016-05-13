@@ -125,11 +125,11 @@ exports.addChat = function(req, res){	//post 방식
 					          	var file = files.message.path;
 					          	var readStream = fs.createReadStream(file);
 					          	// 버킷 이름
-					          	var bucketName = 'dongjoo';
+					          	var bucketName = '***';
 					          	// 버킷 내 객체 키 생성
 					          	var extname = pathUtil.extname(file); // 확장자
 					          	var now = new Date(); // 날짜를 이용한 파일 이름 생성
-					          	var itemKey = 'moyak/' + now.getHours() + now.getMinutes() + now.getSeconds() + Math.floor(Math.random()*1000) + extname+'.png';
+					          	var itemKey = '***/' + now.getHours() + now.getMinutes() + now.getSeconds() + Math.floor(Math.random()*1000) + extname+'.png';
 					          	var contentType = 'image/jpg'; // TODO : 파일에 따라서 컨텐츠 타입 설정
 					          	var params = {
 					          	   Bucket: bucketName,  // 필수
