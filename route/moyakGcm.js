@@ -1,6 +1,6 @@
 //GCM 관련
 var gcm = require('node-gcm');	//GCM 서비스
-var sender = new gcm.Sender('AIzaSyADNJagjLTf__bmzIfhKyXuNFbhL0U7vRg');	// Server API Key
+var sender = new gcm.Sender(***');	// Server API Key
 var devices = [];	// 디바이스 등록 배열
 
 //일단 1개 디바이스만
