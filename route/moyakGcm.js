@@ -1,15 +1,15 @@
 //GCM 관련
 var gcm = require('node-gcm');	//GCM 서비스
-var sender = new gcm.Sender(***');	// Server API Key
+var sender = new gcm.Sender('***');	// Server API Key
 var devices = [];	// 디바이스 등록 배열
 
 //일단 1개 디바이스만
 
-var regIds = ['c2c4dea1fe8736ea	Android	eYOEpvQ38E4:APA91bGAcIDSx_HbRulpP21Qi9LFIorL_T9ZyRC7yV8sDIg42bL7q68emKzUoXbGlZpJNHiY5iAURXokZKPIL8qP4znCjtmnTUwazRD0eIeH5oUDCJLfqOJtI82CN3DVKxFmXosgwiLy']; //내 서버키
+var regIds = ['***']; //내 서버키
 
-var regIds2 = ['eQH93welfh0:APA91bFDAKUSXiEuYM6-PUw377BuuwpnmVP31Tjeq1184bqHskX7bo2ySXAQ3uB4U1H2V3fJ3NhMs18lIx4O91E_EwICPPjOHKy5eneoRN_e2MAUElY-BmjXtepfyttRgC3QnLA27Td9'];	//예훈이꺼
+var regIds2 = ['***'];	//예훈이꺼
 
-var regIds3 = ['fBZTLISFLxw:APA91bFdHUb09gr9ShcSXRKZMmGTIkl93ufvMPwgR530Kzz3eMFmpfj9OMnIcAAiXNLiW3gIPOT91JtEl_PINHftRlryTl96bLTTZ7uqNJ2hYvnvu_wrgzFNvKjMRH1eTGyArXR9eevD'];	//새로받은 서버
+var regIds3 = ['***'];	//새로받은 서버
 
 
 exports.showDeviceList = function(req, res){
