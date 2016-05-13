@@ -13,8 +13,8 @@ var pathUtil = require('path');
 var AWS = require('aws-sdk');
 AWS.config.region = 'ap-northeast-1';
 //
-AWS.config.accessKeyId = 'AKIAIAWD7N6NWZVNU5UA';
-AWS.config.secretAccessKey = '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'
+AWS.config.accessKeyId = '***';
+AWS.config.secretAccessKey = '***'
 
 	var uploadDir = "./upload";
 
