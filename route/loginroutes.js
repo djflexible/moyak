@@ -34,8 +34,7 @@ app.post('/login', function(req, res){
  })(req);
 });
 
-	app.get('/signup', function(req, res) {ㄴ`
-	});
+	app.get('/signup', function(req, res) {});
 
 	app.post('/signup', function(req, res){
 		passport.authenticate('local-signup', function(err, user, msg, statusCode){
