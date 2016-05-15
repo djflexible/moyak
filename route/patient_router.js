@@ -93,7 +93,7 @@ exports.showPatientDetail = function(req, res){
 //////
 /////
 
-exports.deletePatient = function(req, res){	//에러코드 해결안됨
+exports.deletePatient = function(req, res){	
 	//var id = parseInt(req.params.id);
 
 	var url = req.url;
@@ -117,10 +117,10 @@ exports.deletePatient = function(req, res){	//에러코드 해결안됨
 						else {
 				    res.statusCode = 200;
 				    res.end('DELETE SUCCESS');
-					}
-							conn.release();
-							});
+							}
+						conn.release();
 					});
+				});
 			}
 
 //환자 정보 수정함
@@ -149,13 +149,13 @@ exports.editPatient = function(req, res){
 					var sql = 'UPDATE patient SET gender = ?, name = ?, birthyear = ?, profilePicture = ?  WHERE id = ?';
 
 					var patientData = {
-													//'phone': phone,
-													//'password' : password,
-													'gender' : gender,
-													'name' : name,
-													'birthyear' : birthyear,
-													'profilePicture' : profilePicture
-												};
+							//'phone': phone,
+							//'password' : password,
+							'gender' : gender,
+							'name' : name,
+							'birthyear' : birthyear,
+							'profilePicture' : profilePicture
+						};
 					conn.query(sql, [gender, name, birthyear, profilePicture, id], function(err, rows){
 						//TODO 에러처리
 
@@ -165,15 +165,14 @@ exports.editPatient = function(req, res){
 											console.log('err : ', err)
 									    res.statusCode = 404;
 									    res.end('EDIT FAIL');
-															}
+									}
 									else {
 
 										res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
 										res.end(JSON.stringify(patientData));
 									}
-
 									conn.release();
-									});
+								});
 							});
 	}
 ///////////////////////
@@ -183,10 +182,7 @@ exports.editPatient = function(req, res){
 
 	//문의서 생성(직접 생성)
 	exports.addRequest = function(req, res){	//post 방식
-
-
 /////////////////////////////////////////////////
-
 		var patientId = req.body.patientId;
 		var replace = req.body.replace;
 		var quick = req.body.quick;
@@ -194,7 +190,6 @@ exports.editPatient = function(req, res){
 		var format = req.body.format;
 		var latitude = req.body.latitude;
 		var longitude = req.body.longitude;
-
 
 		console.log('리퀘스트에서 환자 아이디 출력 : ', patientId);
 
@@ -213,7 +208,6 @@ exports.editPatient = function(req, res){
 					};
 
 			var query = 'INSERT INTO request SET ?';
-
 			conn.query(query, requestdata, function(err, result){
 
 					if(err){
@@ -311,9 +305,9 @@ exports.editPatient = function(req, res){
 									}
 
 									conn.release();
-									});
+								});
 							});
-					}
+						}
 
 exports.showRequestNear = function(req, res){
 
@@ -340,12 +334,11 @@ exports.showRequestNear = function(req, res){
 					var sql2 = 'SELECT request.id, patientId, patient.name, distance, (6371 * acos(cos(radians(37.585451)) * cos(radians(Latitude)) * cos(radians(Longitude) - radians(126.955528)) + sin(radians(37.585451)) * sin(radians(Latitude )))) AS far, case distance when 0 then 0.3 when 1 then 0.5 when 2 then 1 else 0 end as realDistance from request, patient where request.patientId = patient.id having far < realDistance * 1000';
 					conn.query(sql2, [latitude, longitude, latitude], function(err, rows){
 
-								if ( err ) {
-											console.log('sql2 실패', err);
-											res.sendStatus(500);
-											return;
-										}
-
+							if ( err ) {
+									console.log('sql2 실패', err);
+									res.sendStatus(500);
+									return;
+									}
 						console.log('sql2 성공');
 						console.log('rows 값2: ', rows);
 						res.status(200);
@@ -355,7 +348,7 @@ exports.showRequestNear = function(req, res){
 					conn.release();
 				});
 			});
-	  }
+	  	}
 /////문의서 보기 종료
 
 //환자 정보 상세 보기 /patients/:id 	get방식
@@ -382,8 +375,8 @@ exports.getPharmacistId = function(req, res){
 					console.log('약사 정보', pharmacist);	//환자 정보
 
 							if (pharmacist == undefined) {
-										//res.writeHead(404);
-								    //res.statusCode = 404;
+									//res.writeHead(404);
+									//res.statusCode = 404;
 								    res.end('SHOW FAIL');
 									}
 								else {
@@ -392,6 +385,6 @@ exports.getPharmacistId = function(req, res){
 								    console.log('SHOW SUCCESS', rows);
 								}
 								conn.release();
-								});
+							});
 						});
-				}
+					}
