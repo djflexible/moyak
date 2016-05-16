@@ -1,4 +1,6 @@
 # [개발환경 및 활용방식]
+Moyak 관련 문서 : https://drive.google.com/file/d/0B-zsSFbS0nlhZUdCV2FSV3cwNms/view?usp=sharing
+
 OS : Window 8 - 개발부분, Amazon Linux AMI - 서버 구동 부분
 
 IDE : Sublime Text 3 
