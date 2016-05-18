@@ -4,7 +4,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 //기능이 들어 있는 장소
-var moyak = require('./route/patient_router');
+var moyak = require('./route/patient_router1');
+var moyak = require('./route/patient_router2');
+var moyak = require('./route/patient_router3');
 var moyak_img = require('./route/moyak_img');
 var response = require('./route/response');
 var chat = require('./route/chat');
