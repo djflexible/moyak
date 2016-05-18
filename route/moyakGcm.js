@@ -6,31 +6,23 @@ var devices = [];	// 디바이스 등록 배열
 //일단 1개 디바이스만
 
 var regIds = ['***']; //내 서버키
-
 var regIds2 = ['***'];	//예훈이꺼
-
 var regIds3 = ['***'];	//새로받은 서버
-
 
 exports.showDeviceList = function(req, res){
 }
-
 exports.registerDevice = function(req, res){
 }
-
 exports.sendResponseGCM = function(req, res){
 
-
 	var string = '응답서가 도착하였습니다';
-
-
 	var message = new gcm.Message({	//약사, 약국
 	   collapseKey: 'demo',
 	   notification:{
-	       title:'MOYAK 알림',
-	      body:string,
-	       icon:'ic_launcher'
-	    }
+	      		title:'MOYAK 알림',
+	      		body:string,
+	       		icon:'ic_launcher'
+	    	}
 	})
 /*
 var message = new gcm.Message({	//약사, 약국
