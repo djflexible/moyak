@@ -8,7 +8,8 @@ var moyak = require('./route/patient_router1');
 var moyak = require('./route/patient_router2');
 var moyak = require('./route/patient_router3');
 var moyak_img = require('./route/moyak_img');
-var response = require('./route/response');
+var response = require('./route/response1');
+var response = require('./route/response2');
 var chat = require('./route/chat');
 
 var moyak_pill = require('./route/pill_router');
