@@ -110,16 +110,16 @@ AWS.config.secretAccessKey = '***'
 		          	    					res.status(404).json({id:-1});
 		          	    					res.end('INSERT FAIL1');
 		          	    					return;
-		          	    			}
+		          	    				}
 		          	    			else {
 		          	    				//res.status(200);
 		          	    				res.status(200).end();
 		          	    				console.log('INSERT SUCCESS1');
-		          	    		}
-		          	    		conn.release();
-		          	    		});
-		          	    	});//db종료
-		          			});
-		         			}//큰 else 종료
-		      			});
-							}
+		          	    				}
+		          	    			conn.release();
+		          	    			});
+		          	    		});//db종료
+		          		});
+		         	}//큰 else 종료
+		      	});
+		}
